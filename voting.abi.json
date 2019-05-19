@@ -1,0 +1,261 @@
+[
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_vote",
+				"type": "uint8"
+			},
+			{
+				"name": "_amount",
+				"type": "uint256"
+			},
+			{
+				"name": "_proof",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "vote",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_merkleTreeRoot",
+				"type": "bytes32"
+			},
+			{
+				"name": "_skaleFileLink",
+				"type": "string"
+			},
+			{
+				"name": "_expirationDate",
+				"type": "uint256"
+			},
+			{
+				"name": "_ballotQuestion",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "who",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "vote",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "NewVote",
+		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "ballotQuestion",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_who",
+				"type": "address"
+			}
+		],
+		"name": "canVote",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "expirationDate",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "isVotingOpen",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "merkleTreeRoot",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "skaleFileLink",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_proof",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "_root",
+				"type": "bytes32"
+			},
+			{
+				"name": "_leaf",
+				"type": "bytes32"
+			}
+		],
+		"name": "verify",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "votes",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_expectedVotingAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "votingPercentages",
+		"outputs": [
+			{
+				"name": "noPercent",
+				"type": "uint256"
+			},
+			{
+				"name": "noVotes",
+				"type": "uint256"
+			},
+			{
+				"name": "yesPercent",
+				"type": "uint256"
+			},
+			{
+				"name": "yesVotes",
+				"type": "uint256"
+			},
+			{
+				"name": "totalVoted",
+				"type": "uint256"
+			},
+			{
+				"name": "turnoutPercent",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "votingResult",
+		"outputs": [
+			{
+				"name": "no",
+				"type": "uint256"
+			},
+			{
+				"name": "yes",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
