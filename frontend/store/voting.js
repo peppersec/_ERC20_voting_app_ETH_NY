@@ -243,11 +243,12 @@ export const actions = {
       dispatch('calcutateDuration')
     }, 1000)
   },
-  async fetchDecision({ getters, commit, rootState }) {
+  async fetchDecision({ getters, commit, rootState, rootGetters }) {
     const { votingInstance } = getters
     const { ethAccount } = rootState.metamask
+    const { fromBlock } = rootGetters['metamask/networkConfig']
     const event = await votingInstance.getPastEvents('NewVote', {
-      fromBlock: 10956027,
+      fromBlock,
       toBlock: 'latest',
       filter: { who: ethAccount }
     })
@@ -258,11 +259,11 @@ export const actions = {
     }
   },
   async fetchStats({ dispatch, commit }) {
+    dispatch('fetchVotingPercentages')
     await dispatch('fetchSkaleLink')
     dispatch('fetchParticipants')
     dispatch('fetchExpiration')
     dispatch('fetchDecision')
-    dispatch('fetchVotingPercentages')
   },
   async fetchParticipants({ commit, state }) {
     const web3Provider = new Web3.providers.HttpProvider('http://157.230.154.5:8112')

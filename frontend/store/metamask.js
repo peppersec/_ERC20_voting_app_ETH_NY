@@ -17,7 +17,7 @@ const web3Instance = rpcUrl => {
 const state = () => {
   return {
     ethAccount: null,
-    netId: 1,
+    netId: 42,
     ethBalance: '0',
     gasPrice: { fast: 21, low: 1 },
     tokensList: []
