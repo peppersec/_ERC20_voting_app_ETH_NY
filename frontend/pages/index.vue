@@ -6,7 +6,7 @@
           <h1 class="title is-spaced">The Future of 0x Platform</h1>
           <p>
             It has been well over a year since we published the 0x white paper and shared our
-            vision. Should we support Mattic network?
+            vision. Should we support Mattic network now?
           </p>
           <b-button
             v-scroll-to="'.vote'"
